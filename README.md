@@ -34,7 +34,7 @@ use KiplingKelvin\ChpterPhpSdk\Chpter;
             "transaction_reference"=>  "123456789123",
             "callback_url"=>  "https://be35-41-80-113-202.ngrok.io/chpter_mpesa_payment_callback_url" );
 
-Chpter::mpesaPayment($customer, $products, $amount, $callback_details);
+$response = Chpter::mpesaPayment($customer, $products, $amount, $callback_details);
 ```
 
 ### Card Payment
@@ -69,5 +69,5 @@ use KiplingKelvin\ChpterPhpSdk\Chpter;
             "transaction_reference"=>  "123456789123",
             "callback_url"=>  "https://be35-41-80-113-202.ngrok.io/chpter_mpesa_payment_callback_url" );
 
-Chpter::cardPayment($customer, $products, $amount, $card_details, $callback_details);
+$response = Chpter::cardPayment($customer, $products, $amount, $card_details, $callback_details);
 ```
