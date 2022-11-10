@@ -1,0 +1,23 @@
+{
+    "name": "kiplingkelvin/chpter-php-sdk",
+    "description": "chpter.co PHP SDK for easy Payments and Payouts Integration",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kipling Kelvin",
+            "email": "kiplingmarich@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2",
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "KiplingKelvin\\ChpterPhpSdk\\": "src/"
+        },
+        "files": ["src/functions.php"]
+    }
+}
