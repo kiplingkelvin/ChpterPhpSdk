@@ -5,7 +5,7 @@ namespace KiplingKelvin\ChpterPhpSdk;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 
-class Chpter extends Payouts
+class Chpter 
 {
 
     public static function mpesaPayment($customer, $products, $amount, $callback_details)

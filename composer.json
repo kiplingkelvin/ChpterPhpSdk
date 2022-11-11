@@ -17,8 +17,21 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "KiplingKelvin\\ChpterPhpSdk\\": "packages/simplexi/greetr/src"
+            "KiplingKelvin\\ChpterPhpSdk\\": "src/"
         },
         "files": ["src/functions.php"]
+    },
+    "config": {
+        "sort-packages": true
+      },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KiplingKelvin\\ChpterPhpSdk\\ChpterServiceProvider"
+            ],
+            "aliases":{
+                "Chpter":"KiplingKelvin\\ChpterPhpSdk\\Facades\\Chpter"
+            }
+        }
     }
 }
