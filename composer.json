@@ -16,7 +16,8 @@
     },
     "autoload": {
         "psr-4": {
-            "KiplingKelvin\\ChpterPhpSdk\\": "src/"
+            "App\\": "app/",
+            "KiplingKelvin\\ChpterPhpSdk\\": "packages/simplexi/greetr/src"
         },
         "files": ["src/functions.php"]
     }
