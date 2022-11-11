@@ -32,7 +32,7 @@ class Chpter
     }
 
 
-    public static function mpesaPayment($customer, $products, $amount, $callback_details)
+    public function mpesaPayment($customer, $products, $amount, $callback_details)
     {
 
         $client  = new Client();
@@ -60,7 +60,7 @@ class Chpter
 
     }
 
-    public static function cardPayment($customer, $products, $amount, $card_details, $callback_details)
+    public function cardPayment($customer, $products, $amount, $card_details, $callback_details)
     {
 
         $client  = new Client();
