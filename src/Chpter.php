@@ -7,16 +7,35 @@ use GuzzleHttp\Exception\BadResponseException;
 
 class Chpter 
 {
+    public $chpter_payment_url;
+    public $token;
+    public $domain;
+  
+    /**
+     * Construct method
+     *
+     * Initializes the class with an array of API values.
+     *
+     * @param array $config
+     * @return void
+     * @throws exception if the values array is not valid
+     */
+
+
+
+    public function __construct()
+    {
+        //Base URL for the API endpoints. This is basically the 'common' part of the API endpoints
+         $this->chpter_payment_url = config('chpter.payments_url'); 	
+         $this->token = config('chpter.chpter_token'); 
+         $this->domain =config('chpter.domain');
+    }
+
 
     public static function mpesaPayment($customer, $products, $amount, $callback_details)
     {
-        $baseUrl = "https://chpter.co/";
-        $endpoint = "api/payment/payment-initiate-callback/";
+
         $client  = new Client();
-
-        $token = getenv("CHPTER_TOKEN");
-        $domain = getenv("CLIENT_DOMAIN");
-
 
         $requestBody = array( 
             "customer_details"=> $customer,
@@ -26,10 +45,10 @@ class Chpter
         );
 
         try {
-            $response = $client->post($baseUrl . $endpoint, [
+            $response = $client->post($this->chpter_payment_url, [
                 "headers" => [
-                    "Authorization" => "Token {$token}",
-                    "domain"  => $domain,
+                    "Authorization" => "Token {$this->token}",
+                    "domain"  => $this->domain,
                 ],
                 "json"    => $requestBody,
             ]);
@@ -43,13 +62,9 @@ class Chpter
 
     public static function cardPayment($customer, $products, $amount, $card_details, $callback_details)
     {
-        $baseUrl = "https://chpter.co/";
-        $endpoint = "api/payment/payment-initiate-callback/";
+
         $client  = new Client();
-
-        $token = getenv("CHPTER_TOKEN");
-        $domain = getenv("CLIENT_DOMAIN");
-
+        
         $requestBody = array( 
             "customer_details"=> $customer,
             "products"=> $products,
@@ -59,10 +74,10 @@ class Chpter
         );
 
         try {
-            $response = $client->post($baseUrl . $endpoint, [
+            $response = $client->post($this->chpter_payment_url, [
                 "headers" => [
-                    "Authorization" => "Token {$token}",
-                    "domain"  => $domain,
+                    "Authorization" => "Token {$this->token}",
+                    "domain"  => $this->domain,
                 ],
                 "json"    => $requestBody,
             ]);

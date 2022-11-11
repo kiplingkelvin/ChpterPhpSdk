@@ -2,19 +2,23 @@
 
 return [
 
-     //Chpter payments URL
-     'payments_url' => 'sandbox',
+    /*-----------------------------------------
+    |Chpter payments URL
+    |------------------------------------------
+    */
+    'payments_url' => 'https://chpter.co/api/payment/payment-initiate-callback/',
+
+
     /*-----------------------------------------
     |Your Domain Registered Under Chpter
     |------------------------------------------
     */
-    'domain'   => 'ZtkRW6ATbVtFpNml5w5SfG26Adfyagn9',
+    'domain'   => getenv("CLIENT_DOMAIN"),
 
     /*-----------------------------------------
     |Your Chpter Token
     |------------------------------------------
     */
-    'chpter_token' => 'dosFI1yQ8bvHEVFw',
-
+    'chpter_token' => getenv("CHPTER_TOKEN"),
 
 ];
