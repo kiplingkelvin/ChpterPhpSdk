@@ -40,7 +40,7 @@ class ChpterServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->bind('kipling-chpter', function () {
+        $this->app->singleton(Chpter::class, function () {
             return new Chpter();
         });
     }
